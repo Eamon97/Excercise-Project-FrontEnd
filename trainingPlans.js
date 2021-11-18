@@ -26,9 +26,6 @@ let viewPlans = () => {
 }
 
 
-
-
-
 let createCard = (data) => {
     let newCard = document.createElement('div');
     let newCardBody = document.createElement('div');
