@@ -5,7 +5,7 @@ let excerciseName = document.querySelector("#exName");
 let noOfReps = document.querySelector("#noReps");
 let targetMuscle = document.querySelector("#targetMuscle")
 
-let noOfSets = document.querySelectorAll("#noSets");
+let noOfSets = document.querySelector("#noSets");
 let inputBtn = document.querySelector("#inputBtn");
 
 let createExcercise = () => {
@@ -24,11 +24,11 @@ let createExcercise = () => {
 
 let postFetch = (object) => {
     fetch("http://localhost:9000/Excercise/create", {
-        method: "POST", // We are specifying we are POSTing data
+        method: "POST",
         headers: {
-            "Content-type": "application/JSON", // Telling the server we are sending JSON
+            "Content-type": "application/JSON",
         },
-        body: JSON.stringify(object), // We will be creating an object and passing it in here
+        body: JSON.stringify(object),
     }).then((response) => {
         if (response.status !== 201) {
             console.error(`Status: ${response.status}`);
@@ -40,3 +40,25 @@ let postFetch = (object) => {
 };
 
 inputBtn.addEventListener('click', createExcercise);
+
+let wpNumber = document.querySelector("#wpNumber");
+let dayWeek = document.querySelector("#dayWeek");
+let wpBtn = document.querySelector("#wpBtn");
+
+let addToWP = () => {
+    let wpNumberValue = wpNumber.value;
+    let dayValue = dayWeek.value;
+
+
+    let newWP = {
+
+        sessionID: wpNumberValue,
+        dayOfWeek: dayValue,
+        noOfSets: noOfSetsValue
+        excercises: postFetch(newObject)
+    };
+    postFetch(newWP);
+};
+
+wpBtn.addEventListener('click', addToWP);
+

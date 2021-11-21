@@ -1,10 +1,14 @@
 `use strict`;
+
 let inputBtn = document.querySelector("#inputBtn");
 let parentDiv = document.querySelector('#parentDiv');
 
 
 let viewPlans = () => {
+
+  
     fetch('http://localhost:9000/Excercise/getAll')
+
         .then((response) => {
             if (response.status !== 200) {
                 console.error(`status: ${response.status} `);
@@ -52,3 +56,4 @@ let createCard = (data) => {
 }
 
 inputBtn.addEventListener('click', viewPlans);
+
