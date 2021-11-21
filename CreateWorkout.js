@@ -5,7 +5,7 @@ let excerciseName = document.querySelector("#exName");
 let noOfReps = document.querySelector("#noReps");
 let targetMuscle = document.querySelector("#targetMuscle")
 
-let noOfSets = document.querySelectorAll("#noSets");
+let noOfSets = document.querySelector("#noSets");
 let inputBtn = document.querySelector("#inputBtn");
 
 let createExcercise = () => {
@@ -40,3 +40,25 @@ let postFetch = (object) => {
 };
 
 inputBtn.addEventListener('click', createExcercise);
+
+let wpNumber = document.querySelector("#wpNumber");
+let dayWeek = document.querySelector("#dayWeek");
+let wpBtn = document.querySelector("#wpBtn");
+
+let addToWP = () => {
+    let wpNumberValue = wpNumber.value;
+    let dayValue = dayWeek.value;
+
+
+    let newWP = {
+
+        sessionID: wpNumberValue,
+        dayOfWeek: dayValue,
+        noOfSets: noOfSetsValue
+        excercises: postFetch(newObject)
+    };
+    postFetch(newWP);
+};
+
+wpBtn.addEventListener('click', addToWP);
+
