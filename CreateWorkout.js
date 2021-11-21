@@ -24,11 +24,11 @@ let createExcercise = () => {
 
 let postFetch = (object) => {
     fetch("http://localhost:9000/Excercise/create", {
-        method: "POST", // We are specifying we are POSTing data
+        method: "POST",
         headers: {
-            "Content-type": "application/JSON", // Telling the server we are sending JSON
+            "Content-type": "application/JSON",
         },
-        body: JSON.stringify(object), // We will be creating an object and passing it in here
+        body: JSON.stringify(object),
     }).then((response) => {
         if (response.status !== 201) {
             console.error(`Status: ${response.status}`);

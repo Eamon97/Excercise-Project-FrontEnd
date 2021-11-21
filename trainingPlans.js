@@ -5,7 +5,7 @@ let parentDiv = document.querySelector('#parentDiv');
 
 
 let viewPlans = () => {
-    fetch('http://localhost:9000/Excercise/getAll')
+    fetch('http://localhost:9000/WorkoutPlan/getAll')
         .then((response) => {
             if (response.status !== 200) {
                 console.error(`status: ${response.status} `);
@@ -24,6 +24,7 @@ let viewPlans = () => {
                 });
         });
 }
+
 
 
 let createCard = (data) => {
