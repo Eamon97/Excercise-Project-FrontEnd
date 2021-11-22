@@ -54,7 +54,6 @@ let addToWP = () => {
 
         sessionID: wpNumberValue,
         dayOfWeek: dayValue,
-        noOfSets: noOfSetsValue
         excercises: postFetch(newObject)
     };
     postFetch(newWP);
