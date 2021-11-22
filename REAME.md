@@ -14,6 +14,8 @@ Create controller to allow data transfer between backend and frontend.
 create testing files.
 
 Creating Frontend using VisualStudioCode
+Create webpage html files and include any forms/scripts.
+create relating javascript files to webpages to handle data as JSON.
 
 Prerequisites
 
